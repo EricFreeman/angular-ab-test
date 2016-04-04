@@ -1,0 +1,37 @@
+<head>
+	<script src="scripts/angular.min.js"></script>
+	<script src="scripts/jquery-1.11.1.min.js"></script>
+	<script src="scripts/angular-route.min.js"></script>
+	<script src="scripts/angular-ab-test.js"></script>
+	<script src="scripts/abtest.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<title>Angular AB Test</title>
+</head>
+<body>
+	<div id="content" ng-app="abtest">
+		<header>
+			<span>Angular AB Test</span>
+			<ol>
+				<li><a href="#/example">Example</a></li>
+				<li><a href="#/documentation">Documentation</a></li>
+			</ol>
+		</header>
+		<div>
+			<ng-view>Loading...</ng-view>
+
+			<script type="text/ng-template" id="example.html">
+				<experiment name="sample-test" variant="a">
+					<p>a variation</p>
+				</experiment>
+				<experiment name="sample-test" variant="b">
+					<p>b variation</p>
+				</experiment>
+			</script>
+
+			<script type="text/ng-template" id="documentation.html">
+				Documentation
+			</script>
+		</div>
+	</div>
+</body>
