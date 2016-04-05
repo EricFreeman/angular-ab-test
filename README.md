@@ -1,6 +1,6 @@
-#Angular AB Test
+#Angular A/B Test
 
-Simple AB testing directives because [Optimizely](https://www.optimizely.com/) sucks ass at working with AngularJS projects.
+Simple A/B testing directives because [Optimizely](https://www.optimizely.com/) is pretty rough at working with AngularJS projects.
 
 Add an `<experiment>` tag like so:
 
@@ -12,4 +12,4 @@ Add an `<experiment>` tag like so:
 
 It will show if there's a value for `abtests` in your localStorage that happens to look like this:
 
-[{"name":"sample-test","value":"a"}]
+`[{"name":"sample-test","value":"a"}]`
