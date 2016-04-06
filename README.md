@@ -1,6 +1,6 @@
 #Angular A/B Test
 
-Simple A/B testing directives because [Optimizely](https://www.optimizely.com/) is pretty rough at working with AngularJS projects.
+Simple A/B testing directive because [Optimizely](https://www.optimizely.com/) is pretty rough at working with AngularJS projects.
 
 Add an `<experiment>` tag like so:
 
