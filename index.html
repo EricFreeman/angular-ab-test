@@ -40,14 +40,15 @@
 		<script type="text/ng-template" id="documentation.html">
 			<h1 class="page-header">Documentation</h1>
 
+			<p>Simple A/B testing directive because Optimizely is pretty rough at working with AngularJS projects.</p>
+
 			<p>Add an <code>&lt;experiment&gt;</code> tag like so:</p>
-				<pre>&lt;experiment name="sample-test" variant="a"&gt;
+			
+			<pre>&lt;experiment name="sample-test" variant="a"&gt;
 	&lt;p&gt;a variation&lt;/p&gt;
 &lt;/experiment&gt;</pre>
 
-			<p>It will show if there's a value for `abtests` in your localStorage that happens to look like this:</p>
-
-			<code>[{"name":"sample-test","value":"a"}]</code>
+			<p>It will show if there's a value for `abtests` in your localStorage that happens to look like this: <code>[{"name":"sample-test","value":"a"}]</code></p>
 		</script>
 	</div>
 </body>
