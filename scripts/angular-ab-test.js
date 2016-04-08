@@ -1,19 +1,4 @@
-var abtest = angular.module('abtest', ['ngRoute']);
-
-abtest.config(['$routeProvider',
-	function($routeProvider) {
-		$routeProvider.
-			when('/example', {
-				templateUrl: 'example.html'
-			}).
-			when('/documentation', {
-				templateUrl: 'documentation.html'
-			}).
-			otherwise({
-				redirectTo: '/example'
-			});
-	}
-]);
+var abtest = angular.module('abtest');
 
 abtest.directive('experiment', function() {
 	return {
@@ -27,7 +12,7 @@ abtest.directive('experiment', function() {
 	}
 });
 
-function experimentController($scope) {
+function ExperimentController($scope) {
 	$scope.experiment = { name: undefined, value: undefined };
 
 	$scope.load = function(name) {
@@ -36,10 +21,28 @@ function experimentController($scope) {
 
 		var parsed = JSON.parse(experimentJson);
 		var filtered = parsed.filter(function(item) { return item.name === name; });
-		$scope.experiment = filtered.length > 0 ? filtered[0] : undefined;
+		
+		if(filtered.length > 0) {
+			$scope.experiment = filtered[0];
+		}
 	}
 
 	$scope.canShow = function(variant) {
 		return $scope.experiment.value === variant;
+	}
+}
+
+window.addTest = function(testName, variant) {
+	var test = {"name":testName,"value":variant};
+
+	var experimentJson = localStorage['abtests'];
+
+	if(!experimentJson) {
+		localStorage['abtests'] = JSON.stringify([test]);
+	}
+	else {
+		var experiments = JSON.parse(experimentJson);
+		experiment.push(test);
+		localStorage['abtests'] = JSON.stringify(experiments);
 	}
 }
