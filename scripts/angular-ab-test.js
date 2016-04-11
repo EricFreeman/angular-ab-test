@@ -8,7 +8,7 @@ abtest.directive('experiment', function() {
 			name: '@name',
 			variant: '@variant'
 		},
-		templateUrl: '../templates/experiment.html'
+		template: '<div ng-controller="ExperimentController" ng-init="load(name)" ng-show="canShow(variant)"><div ng-transclude></div></div>'
 	}
 });
 
