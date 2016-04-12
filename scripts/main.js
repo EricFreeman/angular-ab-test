@@ -16,10 +16,6 @@ abtest.config(['$routeProvider',
 	}
 ]);
 
-angular.module('abtest').config(function ($locationProvider) {
-	$locationProvider.html5Mode(true);
-});
-
 function HeaderController($scope, $location) 
 { 
     $scope.isActive = function (viewLocation) { 
