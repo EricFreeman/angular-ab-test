@@ -46,3 +46,27 @@ window.addTest = function(testName, variant) {
 		localStorage['abtests'] = JSON.stringify(experiments);
 	}
 }
+
+window.updateTest = function(testName, variant) {
+	var newTest = {"name":testName,"value":variant};
+
+	var experimentJson = localStorage['abtests'];
+
+	if(!experimentJson) return;
+
+	var experiments = JSON.parse(experimentJson);
+
+	var filtered = experiments.filter(function(item) { return item.name === testName; });
+	
+	if(filtered.length > 0) {
+		//remove old
+		var index = experiments.indexOf(filtered[0])
+		experiments.splice(index, 1);
+
+		//add new
+		filtered[0].value = variant
+		experiments.push(filtered[0]);
+	}
+
+	localStorage['abtests'] = JSON.stringify(experiments);
+}

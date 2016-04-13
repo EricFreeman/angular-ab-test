@@ -33,6 +33,9 @@
 
 				<div class="alert alert-info">If this is your first time here, you've automatically been placed into the 'a' variation for the experiment.  This would normally be set by Optimizely or SiteSpect or whatever other bullshit A/B testing framework your business people have tricked the company into using.</div>
 
+				<button type="button" class="btn" ng-click="switchVariant('a')">Variant A</button>
+				<button type="button" class="btn" ng-click="switchVariant('b')">Variant B</button>
+
 				<experiment name="sample-test" variant="a">
 					<p>a variation</p>
 					<button type="button" class="btn btn-default">

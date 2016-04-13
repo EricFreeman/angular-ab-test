@@ -23,11 +23,17 @@ function HeaderController($scope, $location)
     };
 }
 
-function ExampleController($scope) {
+function ExampleController($scope, $location) {
 	$scope.load = function() {
 		var experimentJson = localStorage['abtests'];
 		if(!experimentJson) {
 			window.addTest('sample-test', 'a');
 		}
+	}
+
+	$scope.switchVariant = function(variant) {
+		window.updateTest('sample-test', variant);
+		// this is a fuck but meh; this is an example and why are you changing tests at real time anyways?
+		$location.path('/');
 	}
 }
