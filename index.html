@@ -33,8 +33,10 @@
 
 				<div class="alert alert-info">If this is your first time here, you've automatically been placed into the 'a' variation for the experiment.  This would normally be set by Optimizely or SiteSpect or whatever other bullshit A/B testing framework your business people have tricked the company into using.</div>
 
-				<button type="button" class="btn" ng-click="switchVariant('a')">Variant A</button>
-				<button type="button" class="btn" ng-click="switchVariant('b')">Variant B</button>
+				<div class="page-header">
+					<button type="button" class="btn" ng-click="switchVariant('a')">Variant A</button>
+					<button type="button" class="btn" ng-click="switchVariant('b')">Variant B</button>
+				</div>
 
 				<experiment name="sample-test" variant="a">
 					<p>a variation</p>
@@ -58,13 +60,19 @@
 
 			<p>Simple A/B testing directive because Optimizely is pretty rough at working with AngularJS projects.</p>
 
+			<h4 class="page-header">In Optimizely, SiteSpect<small>, or whatever else you're using I'm sure it'll probably work...</small></h4>
+
+			<p>Setup tests by calling handy helper methods like <code>window.addTest(testName, variant)</code> or <code>window.updateTest(testName, variant)</code>.</p>
+
+			<h4 class="page-header">In your code base</h4>
+
 			<p>Add an <code>&lt;experiment&gt;</code> tag like so:</p>
 			
 			<pre>&lt;experiment name="sample-test" variant="a"&gt;
 	&lt;p&gt;a variation&lt;/p&gt;
 &lt;/experiment&gt;</pre>
 
-			<p>It will show if there's a value for `abtests` in your localStorage that happens to look like this: <code>[{"name":"sample-test","value":"a"}]</code></p>
+			<p>It will show if there's a value for `abtests` in your localStorage that happens to look like this: <code>[{"name":"sample-test","value":"a"}]</code>.</p>
 		</script>
 	</div>
 </body>
