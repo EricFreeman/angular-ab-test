@@ -67,13 +67,21 @@
 
 			<h4 class="page-header">In your code base</h4>
 
-			<p>Add an <code>&lt;experiment&gt;</code> tag like so:</p>
+			<p>Add your <code>&lt;experiment&gt;</code> tags like so:</p>
 			
-			<pre>&lt;experiment name="sample-test" variant="a"&gt;
-	&lt;p&gt;a variation&lt;/p&gt;
-&lt;/experiment&gt;</pre>
+			<pre>
+&lt;experiment name="sample-test" variant="a"&gt;
+  &lt;p&gt;first stuff&lt;/p&gt;
+&lt;/experiment&gt;
+&lt;experiment name="sample-test" variant="b"&gt;
+  &lt;p&gt;second stuff&lt;/p&gt;
+&lt;/experiment&gt;
+&lt;experiment name="sample-test" variant="c"&gt;
+  &lt;p&gt;other stuff&lt;/p&gt;
+&lt;/experiment&gt;
+</pre>
 
-			<p>It will show if there's a value for `abtests` in your localStorage that happens to look like this: <code>[{"name":"sample-test","value":"a"}]</code>.</p>
+			<p>It will show the first experiment if there's a value for `abtests` in your localStorage that happens to look like this: <code>[{"name":"sample-test","value":"a"}]</code> or it will show the second one if the value is 'b', and so on and so forth.</p>
 		</script>
 	</div>
 </body>
