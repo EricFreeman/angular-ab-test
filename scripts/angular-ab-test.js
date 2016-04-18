@@ -6,18 +6,22 @@ abtest.directive('experiment', function() {
 		transclude: true,
 		scope: {
 			name: '@name',
-			variant: '@variant'
+			variant: '@variant',
+			isdefault: "@isdefault"
 		},
-		template: '<div ng-controller="ExperimentController" ng-init="load(name)" ng-show="canShow(variant)"><div ng-transclude></div></div>'
+		template: '<div ng-controller="ExperimentController" ng-init="load(name, isdefault)" ng-show="canShow(variant)"><div ng-transclude></div></div>'
 	}
 });
 
 function ExperimentController($scope) {
 	$scope.experiment = { name: undefined, value: undefined };
+	$scope.noTestLoaded = false;
 
-	$scope.load = function(name) {
+	$scope.load = function(name, isDefault) {
+		$scope.isDefault = isDefault;
+
 		var experimentJson = localStorage['abtests'];
-		if(!experimentJson) return;
+		if(!experimentJson)	return;
 
 		var parsed = JSON.parse(experimentJson);
 		var filtered = parsed.filter(function(item) { return item.name === name; });
@@ -25,10 +29,17 @@ function ExperimentController($scope) {
 		if(filtered.length > 0) {
 			$scope.experiment = filtered[0];
 		}
+		else {
+			$scope.noTestLoaded = true;
+		}
 	}
 
 	$scope.canShow = function(variant) {
-		return $scope.experiment.value === variant;
+		return $scope.experiment.value === variant || $scope.showDefault();
+	}
+
+	$scope.showDefault = function() {
+		return $scope.noTestLoaded && $scope.isDefault;
 	}
 }
 
@@ -69,4 +80,19 @@ window.updateTest = function(testName, variant) {
 	}
 
 	localStorage['abtests'] = JSON.stringify(experiments);
+}
+
+window.hasTest = function(testName) {
+	var experimentJson = localStorage['abtests'];
+
+	if(!experimentJson) return false;
+
+	var experiments = JSON.parse(experimentJson);
+	var filtered = experiments.filter(function(item) { return item.name === testName; });
+	
+	if(filtered.length > 0) {
+		return true;
+	}
+
+	return false;
 }
