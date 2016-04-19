@@ -21,7 +21,10 @@ function ExperimentController($scope) {
 		$scope.isDefault = isDefault;
 
 		var experimentJson = localStorage['abtests'];
-		if(!experimentJson)	return;
+		if(!experimentJson)	{
+			$scope.noTestLoaded = true;
+			return;
+		}
 
 		var parsed = JSON.parse(experimentJson);
 		var filtered = parsed.filter(function(item) { return item.name === name; });

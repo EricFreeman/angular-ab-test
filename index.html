@@ -70,7 +70,7 @@
 			<p>Add your <code>&lt;experiment&gt;</code> tags like so:</p>
 			
 			<pre>
-&lt;experiment name="sample-test" variant="a"&gt;
+&lt;experiment name="sample-test" variant="a" isdefault="true"&gt;
   &lt;p&gt;first stuff&lt;/p&gt;
 &lt;/experiment&gt;
 &lt;experiment name="sample-test" variant="b"&gt;
@@ -82,6 +82,9 @@
 </pre>
 
 			<p>It will show the first experiment if there's a value for `abtests` in your localStorage that happens to look like this: <code>[{"name":"sample-test","value":"a"}]</code> or it will show the second one if the value is 'b', and so on and so forth.</p>
+
+			<h4 class="page-header">Default experiment</h4>
+			<p>In case you want to release code before setting up the experiment, just set <code>isdefault="true"</code> on the experiment you want to show up if there's no entry for the test in localStorage.</p>
 		</script>
 	</div>
 </body>
