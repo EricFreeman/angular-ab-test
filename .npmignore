@@ -1,0 +1,9 @@
+**/scripts/lib
+**/css
+**/
+!/scripts/angular-ab-test.js
+/scripts/main.js
+bower.json
+.npmignore
+favicon.ico
+index.html
