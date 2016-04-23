@@ -23,7 +23,9 @@
     "favicon.ico",
     "index.html",
     "README.md",
-    "package.json"
+    "package.json",
+	"bower.json",
+	".bower.json"
   ],
   "version": "1.0.2"
 }
