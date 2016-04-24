@@ -19,6 +19,7 @@
     "test",
     "tests",
     "scripts/lib",
+    "scripts/main.js",
     "css",
     "favicon.ico",
     "index.html",
