@@ -1,4 +1,4 @@
-var abtest = angular.module('abtest');
+var abtest = angular.module('abtest', ['ngRoute']);
 
 abtest.directive('experiment', function() {
 	return {

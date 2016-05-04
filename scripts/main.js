@@ -1,4 +1,4 @@
-var abtest = angular.module('abtest', ['ngRoute']);
+var abtest = angular.module('abtest');
 
 abtest.config(['$routeProvider',
 	function($routeProvider) {
