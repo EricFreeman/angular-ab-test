@@ -13,7 +13,7 @@ abtest.directive('experiment', function() {
 	}
 });
 
-function ExperimentController($scope) {
+abtest.controller('ExperimentController', ['$scope', function($scope) {
 	$scope.experiment = { name: undefined, value: undefined };
 	$scope.noTestLoaded = false;
 
@@ -44,7 +44,7 @@ function ExperimentController($scope) {
 	$scope.showDefault = function() {
 		return $scope.noTestLoaded && $scope.isDefault;
 	}
-}
+}]);
 
 window.addTest = function(testName, variant) {
 	var test = {"name":testName,"value":variant};
