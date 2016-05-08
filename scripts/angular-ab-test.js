@@ -56,8 +56,10 @@ window.addTest = function(testName, variant) {
 	}
 	else {
 		var experiments = JSON.parse(experimentJson);
-		experiment.push(test);
-		localStorage['abtests'] = JSON.stringify(experiments);
+		if(!window.hasTest(testName)) {
+			experiments.push(test);
+			localStorage['abtests'] = JSON.stringify(experiments);
+		}
 	}
 }
 
