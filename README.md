@@ -1,5 +1,8 @@
 #Angular A/B Test
 
+[![npm version](https://badge.fury.io/js/angular-ab-test.svg)](https://badge.fury.io/js/angular-ab-test)
+[![Bower version](https://badge.fury.io/bo/angular-ab-test.svg)](https://badge.fury.io/bo/angular-ab-test)
+
 Simple A/B testing directive because [Optimizely](https://www.optimizely.com/) is pretty rough at working with AngularJS projects.
 
 ---
