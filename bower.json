@@ -1,0 +1,29 @@
+{
+  "name": "angular-ab-test",
+  "description": "Simple A/B testing for AngularJS",
+  "main": "scripts/angular-ab-test.js",
+  "authors": [
+    "Eric Freeman"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "AngularJS",
+    "ab",
+    "test"
+  ],
+  "homepage": "https://github.com/EricFreeman/angular-ab-test",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "scripts/lib",
+    "css",
+    "favicon.ico",
+    "index.html",
+    "README.md",
+    "package.json"
+  ],
+  "version": "1.0.1"
+}
