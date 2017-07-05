@@ -1,4 +1,4 @@
-#Angular A/B Test
+# Angular A/B Test
 
 [![npm version](https://badge.fury.io/js/angular-ab-test.svg)](https://badge.fury.io/js/angular-ab-test)
 [![Bower version](https://badge.fury.io/bo/angular-ab-test.svg)](https://badge.fury.io/bo/angular-ab-test)
